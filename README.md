@@ -8,6 +8,4 @@ Create a `config.json` for your sensitive user info, copy paste this template, t
 
 {
 	"token": "api token"
-	
 }
-
