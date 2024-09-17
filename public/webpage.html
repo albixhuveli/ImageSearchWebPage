@@ -40,10 +40,11 @@
         function searchImage() {
             const searchTerm = document.getElementById('search-term').value;
             if (searchTerm) {
-                fetch(`/search?query=${searchTerm}`)
+                fetch(`/.netlify/functions/search?query=${searchTerm}`)
+
                     .then(response => response.json())
                     .then(data => {
-                        if (data.results.length > 0) {
+                        if (data.results && data.results.length > 0) {
                             const imageUrl = data.results[0].urls.regular;
                             document.getElementById('image-result').innerHTML = `<img src="${imageUrl}" alt="${searchTerm}">`;
                         } else {
@@ -55,6 +56,7 @@
                 alert('Please enter a search term!');
             }
         }
+
 
     </script>
 
